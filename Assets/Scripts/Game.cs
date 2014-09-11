@@ -12,10 +12,9 @@ public class Game : MonoBehaviour
 
 	public GameObject ball;
 	public GUIText End_Text;
+	public float m_fallLimit;
 
 	public static bool gameOver {get{return m_gameOver;}}
-	
-	private float m_fallLimit = -5;
 	private static bool m_gameOver;
 
 	void Awake ()
