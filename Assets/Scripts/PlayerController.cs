@@ -12,11 +12,13 @@ public class PlayerController : MonoBehaviour
 	public float speedModifier;
 	public float jumpModifier;
 	public Transform gameCamera;
+	public float jumpTimeLimit;
 
 	private Vector3 m_playerMovement;
 	private float m_moveHorizontal;
 	private float m_moveVertical;
 	private float SpeedRechargeTime;
+	private float jumpTime;
 	
 	void FixedUpdate ()
 	{
@@ -28,10 +30,12 @@ public class PlayerController : MonoBehaviour
 
 		rigidbody.AddForce (m_playerMovement * speedModifier * Time.deltaTime);
 
+		jumpTime += Time.deltaTime;
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) && jumpTime >= jumpTimeLimit)
 		{
 			rigidbody.AddForce(Vector3.up * jumpModifier);
+			jumpTime = 0;
 		}
 	}
 }
