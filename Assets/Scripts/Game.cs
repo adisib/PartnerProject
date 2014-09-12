@@ -30,8 +30,13 @@ public class Game : MonoBehaviour
 		if(ball.transform.position.y < m_fallLimit)
 		{
 			m_gameOver = true;
-			End_Text.text = "Game Over";
+			End_Text.text = "Game Over\n Press 'R' to restart...";
 			ball.SetActive(false);
+
+			if(Input.GetKeyDown(KeyCode.R))
+			{
+				Application.LoadLevel("Main");
+			}
 		}
 	}
 }
