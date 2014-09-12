@@ -6,16 +6,15 @@ using UnityEngine;
 using System.Collections;
 
 public class BlockMover : MonoBehaviour {
-
-	//  * Time.deltaTime
 	
+	//
+
 	public bool x, y, z;
 	public float distance; // one way, either way
 	public float speed;
 
 	private Vector3 startPos;
-
-	// Use this for initialization
+	
 	void Awake ()
 	{
 		startPos = rigidbody.position;
@@ -33,8 +32,7 @@ public class BlockMover : MonoBehaviour {
 			rigidbody.AddForce (Vector3.back * speed);
 		}
 	}
-	
-	// Update is called once per frame
+
 	void Update ()
 	{
 		if(x)
