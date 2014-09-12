@@ -20,6 +20,9 @@ public class Game : MonoBehaviour
 	{
 		// Attempt to cap framerate
 		Application.targetFrameRate = 60;
+		// Don't show mouse cursor
+
+		Screen.showCursor = false;
 		End_Text.text = "";
 		m_gameOver = false;
 	}
@@ -30,8 +33,17 @@ public class Game : MonoBehaviour
 		if(ball.transform.position.y < m_fallLimit)
 		{
 			m_gameOver = true;
-			End_Text.text = "Game Over";
+			End_Text.text = "Game Over\n Press 'R' to restart...";
 			ball.SetActive(false);
+
+			if(Input.GetKeyDown(KeyCode.R))
+			{
+				Application.LoadLevel("Main");
+			}
+		}
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
 		}
 	}
 }
