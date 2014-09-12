@@ -20,6 +20,9 @@ public class Game : MonoBehaviour
 	{
 		// Attempt to cap framerate
 		Application.targetFrameRate = 60;
+		// Don't show mouse cursor
+
+		Screen.showCursor = false;
 		End_Text.text = "";
 		m_gameOver = false;
 	}
@@ -37,6 +40,10 @@ public class Game : MonoBehaviour
 			{
 				Application.LoadLevel("Main");
 			}
+		}
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
 		}
 	}
 }
