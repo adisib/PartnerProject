@@ -14,7 +14,6 @@ public class Game : MonoBehaviour
 	public GUIText End_Text;
 	public float m_fallLimit;
 
-	public static bool gameOver {get{return m_gameOver;}}
 	private static bool m_gameOver;
 
 	void Awake ()
@@ -22,10 +21,6 @@ public class Game : MonoBehaviour
 		// Attempt to cap framerate
 		Application.targetFrameRate = 60;
 		End_Text.text = "";
-	}
-	
-	void Start ()
-	{
 		m_gameOver = false;
 	}
 

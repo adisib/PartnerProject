@@ -1,5 +1,5 @@
 ﻿//
-// Fixed-follow camera with no rotation, player always centered
+// Camera Follows player, and Rotates by moving mouse
 //
 
 using UnityEngine;
@@ -16,7 +16,6 @@ public class CameraController : MonoBehaviour {
 	private Vector3 newTransform;
 	
 	void Start () {
-		// offset = transform.position;
 		offset = new Vector3(player.position.x, player.position.y + 5.0f, player.position.z - 5.0f);
 	}
 
