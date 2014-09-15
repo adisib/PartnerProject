@@ -33,7 +33,7 @@ public class BlockMover : MonoBehaviour {
 		}
 	}
 
-	void Update ()
+	void FixedUpdate ()
 	{
 		if(x)
 		{

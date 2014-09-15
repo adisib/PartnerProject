@@ -26,7 +26,7 @@ public class HUDFPS : MonoBehaviour
 	{
 		if( !FPS_Text )
 		{
-			Debug.Log("UtilityFramesPerSecond needs a GUIText component!");
+			Debug.Log("HUDFPS needs a GUIText component!");
 			enabled = false;
 			return;
 		}
